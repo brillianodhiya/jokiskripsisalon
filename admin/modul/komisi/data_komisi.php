@@ -14,13 +14,12 @@
                             <th>Opsi</th>
                         </tr>
                     </thead>
-            </div>
-            <?php
+                    <tbody>
+                        <?php
             $no = 1;
             $data = mysqli_query($koneksi, "SELECT * FROM komisi");
             while ($d = mysqli_fetch_array($data)) {
-            ?>
-                <tbody>
+                ?>
                     <tr>
                         <td><?= $no++; ?></td>
                         <td><?= $d['kode_komisi']; ?></td>
@@ -29,14 +28,14 @@
                             <a href="?page=komisi&act=edit&id_kom=<?= $d['id_kom']; ?>" class="btn btn-warning text-white text-right"> <i class="fa fa-user-edit text-white"></i> </a>
                             <a href="?page=komisi&act=del&id_kom=<?= $d['id_kom']; ?>" class="btn btn-danger text-white text-right"> <i class="fas fa-trash-alt fa-1x text-white"></i> </a>
                         </td>
-
-
+                        
+                        
                     </tr>
-                <?php
+                    <?php
             }
-                ?>
-                </tr>
+            ?>
                 </tbody>
-                </table>
+            </table>
+        </div>
         </div>
     </div>

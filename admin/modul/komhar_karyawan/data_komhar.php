@@ -17,22 +17,24 @@
                             <th>Opsi</th>
                         </tr>
                     </thead>
-            </div>
 
+            <tbody>
             <?php
             $no = 1;
-            $data = mysqli_query($koneksi, "SELECT * FROM riwayat_pelanggan INNER JOIN 
-            tb_karyawan ON riwayat_pelanggan.id_karyawan = tb_karyawan.id_karyawan");
+            $data = mysqli_query($koneksi, "SELECT *
+FROM riwayat_pelanggan
+INNER JOIN tb_karyawan ON riwayat_pelanggan.id_karyawan = tb_karyawan.id_karyawan
+INNER JOIN komhar ON riwayat_pelanggan.id_tamu = komhar.id_tamu
+INNER JOIN komisi ON komhar.id_kom = komisi.id_kom");
             while ($d = mysqli_fetch_array($data)) {
             ?>
-                <tbody>
                     <tr>
                         <td><?= $no++; ?></td>
                         <td><?= $d['kode_karyawan']; ?></td>
                         <td><?= $d['nama_karyawan']; ?></td>
                         <td><?= $d['treatment']; ?></td>
                         <td><?= rupiah($d['total']); ?></td>
-                        <td><?= $d['komisi']; ?></td>
+                        <td><?= $d['kode_komisi']; ?></td>
                         <td><?= rupiah($d['total_komisi']); ?></td>
                         <td>
                             <a href="?page=komhar&act=edit&id=<?= $d['id_komhar']; ?>" class="btn btn-warning text-white text-right"> <i class="fa fa-user-edit text-white"></i> </a>
@@ -42,9 +44,11 @@
                 <?php
             }
                 ?>
-                </tr>
-        </div>
+                
         </tbody>
+        
         </table>
+        </div>
+
     </div>
 </div>

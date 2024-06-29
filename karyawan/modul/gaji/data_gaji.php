@@ -14,12 +14,12 @@
                             <th>Cetak</th>
                         </tr>
                     </thead>
+                    <tbody>
                     <?php
                     $no = 1;
                     $data = mysqli_query($koneksi, "SELECT * FROM tb_gaji WHERE id_karyawan = '$sesi'");
                     while ($d = mysqli_fetch_array($data)) {
                     ?>
-                        <tbody>
                             <tr>
                                 <td><?= $no++; ?></td>
                                 <td><?= strftime('%A, %d %B %Y', strtotime(($d['tgl_gaji']))); ?></td>
@@ -33,13 +33,13 @@
                                 <td>
                                     <a href="modul/gaji/cetak_gaji.php?gaji=<?= $_GET['gaji']; ?>&id=<?= $d['id_gaji'] ?>" target="_blank" class="btn btn-success text-white text-right"><i class="fa fa-print text-white"></i> </a>
                                 </td>
+                            </tr>
                             <?php
                         }
                             ?>
-                            </tr>
                         </tbody>
                 </table>
-                </tr>
             </div>
         </div>
     </div>
+</div>

@@ -11,7 +11,7 @@
  Target Server Version : 80030
  File Encoding         : 65001
 
- Date: 28/06/2024 00:33:53
+ Date: 28/06/2024 16:37:02
 */
 
 SET NAMES utf8mb4;
@@ -28,7 +28,7 @@ CREATE TABLE `komhar`  (
   `id_kom` int NOT NULL,
   `total_komisi` int NOT NULL,
   PRIMARY KEY (`id_komhar`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of komhar
@@ -45,10 +45,10 @@ INSERT INTO `komhar` VALUES (12, 23, 1, 2, 70400);
 DROP TABLE IF EXISTS `komisi`;
 CREATE TABLE `komisi`  (
   `id_kom` int NOT NULL AUTO_INCREMENT,
-  `kode_komisi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `jumlah` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `kode_komisi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `jumlah` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_kom`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of komisi
@@ -70,7 +70,7 @@ CREATE TABLE `pendapatan`  (
   `total_bayar` double NOT NULL,
   `tgl_tambah` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_pendapatan`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pendapatan
@@ -84,17 +84,17 @@ DROP TABLE IF EXISTS `riwayat_pelanggan`;
 CREATE TABLE `riwayat_pelanggan`  (
   `id_tamu` int NOT NULL AUTO_INCREMENT,
   `id_karyawan` int NOT NULL,
-  `nama_tamu` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `alamat` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nama_tamu` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `alamat` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `no_hp` bigint NOT NULL,
-  `treatment` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `masalah` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `treatment` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `masalah` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `harga` double NOT NULL,
   `potongan` double NOT NULL,
   `total` double NOT NULL,
   `tanggal_kunjung` date NULL DEFAULT NULL,
   PRIMARY KEY (`id_tamu`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of riwayat_pelanggan
@@ -224,6 +224,7 @@ CREATE TABLE `tb_gaji`  (
 -- Records of tb_gaji
 -- ----------------------------
 INSERT INTO `tb_gaji` VALUES (142, '2024-06-28', 1, 0, 700000, 0, 0, 30000, 126400, 'Facial Treatment, Facial Treatment, Treatment Satuan, Spa Treatment, ', 2, 20000, 836400, 3);
+INSERT INTO `tb_gaji` VALUES (143, '2024-06-28', 1, 0, 700000, 0, 0, 30000, 126400, 'Facial Treatment, Facial Treatment, Treatment Satuan, Spa Treatment, ', 2, 20000, 836400, 3);
 
 -- ----------------------------
 -- Table structure for tb_karyawan
@@ -231,14 +232,14 @@ INSERT INTO `tb_gaji` VALUES (142, '2024-06-28', 1, 0, 700000, 0, 0, 30000, 1264
 DROP TABLE IF EXISTS `tb_karyawan`;
 CREATE TABLE `tb_karyawan`  (
   `id_karyawan` int NOT NULL AUTO_INCREMENT,
-  `kode_karyawan` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `nama_karyawan` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `username` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `kode_karyawan` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `nama_karyawan` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `no_hp` bigint NOT NULL,
   `tgl_masuk` date NOT NULL,
   PRIMARY KEY (`id_karyawan`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tb_karyawan
@@ -293,10 +294,10 @@ INSERT INTO `tb_rekrutmen` VALUES (15, 7, '2021-03-11', 'asasasasa', 2, 'Y');
 DROP TABLE IF EXISTS `tb_tunjangan`;
 CREATE TABLE `tb_tunjangan`  (
   `id_tunjangan` int NOT NULL AUTO_INCREMENT,
-  `nama_tunjangan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nama_tunjangan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `jumlah_tunjangan` int NOT NULL,
   PRIMARY KEY (`id_tunjangan`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tb_tunjangan
@@ -315,7 +316,7 @@ CREATE TABLE `tb_tunjangankaryawan`  (
   `id_tunjangan` int NOT NULL,
   `id_karyawan` int NOT NULL,
   PRIMARY KEY (`id_tunjangankaryawan`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tb_tunjangankaryawan

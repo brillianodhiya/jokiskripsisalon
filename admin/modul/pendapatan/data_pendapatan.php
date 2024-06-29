@@ -15,14 +15,14 @@
                             <th>Opsi</th>
                         </tr>
                     </thead>
-            </div>
+                
+                <tbody>
 
             <?php
             $no = 1;
             $data = mysqli_query($koneksi, "SELECT * FROM riwayat_pelanggan");
             while ($d = mysqli_fetch_array($data)) {
             ?>
-                <tbody>
                     <tr>
                         <td><?= $no++; ?></td>
                         <td><?= $d['treatment']; ?></td>
@@ -38,9 +38,10 @@
                 <?php
             }
                 ?>
-                </tr>
-        </div>
-        </tbody>
+                
+            </tbody>
         </table>
     </div>
+    </div>
+</div>
 </div>

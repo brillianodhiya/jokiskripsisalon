@@ -16,12 +16,12 @@
                                 <th>Opsi</th>
                             </tr>
                         </thead>
+                        <tbody>
                         <?php
                         $no = 1;
                         $data = mysqli_query($koneksi, "SELECT * FROM tb_gaji INNER JOIN tb_karyawan ON tb_gaji.id_karyawan = tb_karyawan.id_karyawan");
                         while ($d = mysqli_fetch_array($data)) {
                         ?>
-                            <tbody>
                                 <tr>
                                     <td><?= $no++; ?></td>
                                     <td><?= $d['tgl_gaji']; ?></td>

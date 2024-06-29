@@ -1,6 +1,7 @@
 <?php
 $tgl = date('Y-m-d');
 $bulan = date('m');
+$tahun = date('Y');
 ?>
 <?php
 $idk = $_POST['id'];
@@ -32,9 +33,9 @@ if ($cek == 0) {
                                 <th><?= $r['kode_karyawan'] ?></th>
                             </tr>
                             <tr>
-                                <th>Bulan</th>
+                                <th>Pilih Bulan (<?= $tahun ?>)</th>
                                 <th>:</th>
-                                <th><?php
+                                <!-- <th><?php
                                 $bln = date('m');
                                 if ($bln == 1) {
                                     echo "Januari";
@@ -61,7 +62,50 @@ if ($cek == 0) {
                                 } elseif ($bln == 12) {
                                     echo "Desember";
                                 }
-                                 ?></th>
+                                 ?></th> -->
+                                 <!-- select month  -->
+                                    <th>
+                                        <select name="bulan" id="bulan" class="form-control">
+                                            <option value="1" <?php if ($bulan == 1) {
+                                                                    echo "selected";
+                                                                } ?>>Januari</option>
+                                            <option value="2" <?php if ($bulan == 2) {
+                                                                    echo "selected";
+                                                                } ?>>Februari</option>
+                                            <option value="3" <?php if ($bulan == 3) {
+                                                                    echo "selected";
+                                                                } ?>>Maret</option>
+                                            <option value="4" <?php if ($bulan == 4) {
+                                                                    echo "selected";
+                                                                } ?>>April</option>
+                                            <option value="5" <?php if ($bulan == 5) {
+                                                                    echo "selected";
+                                                                } ?>>Mei</option>
+                                            <option value="6" <?php if ($bulan == 6) {
+                                                                    echo "selected";
+                                                                } ?>>Juni</option>
+                                            <option value="7" <?php if ($bulan == 7) {
+                                                                    echo "selected";
+                                                                } ?>>Juli</option>
+                                            <option value="8" <?php if ($bulan == 8) {
+                                                                    echo "selected";
+                                                                } ?>>Agustus</option>
+                                            <option value="9" <?php if ($bulan == 9) {
+                                                                    echo "selected";
+                                                                } ?>>September</option>
+                                            <option value="10" <?php if ($bulan == 10) {
+                                                                    echo "selected";
+                                                                } ?>>Oktober</option>
+                                            <option value="11" <?php if ($bulan == 11) {
+                                                                    echo "selected";
+                                                                } ?>>November</option>
+                                            <option value="12" <?php if ($bulan == 12) {
+                                                                    echo "selected";
+                                                                } ?>>Desember</option>
+                                        </select>
+                                    </th>
+                                                                  
+
                             </tr>
                         </table>
                     </span>
