@@ -62,7 +62,7 @@ while ($d = mysqli_fetch_array($data)) {
                                 <th>Bukti</th>
                                 <th>:</th>
                                 <th>
-                                    <img src="../assets/img/bukti/<?= $d['foto'] ?>" class="img-fluid" style="width:300px;height:350px;" alt="">
+                                    <img src="../assets/img/bukti/logo.png" class="img-fluid" style="width:300px;height:350px;" alt="">
                                 </th>
                             </tr>
                         </table>

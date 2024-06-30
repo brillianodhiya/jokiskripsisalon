@@ -296,7 +296,9 @@ if (@$_SESSION['Admin']) {
                                 include 'modul/pendapatan/detail_pendapatan.php';
                             } elseif ($act == 'del') {
                                 include 'modul/pendapatan/del_pendapatan.php';
-                            } 
+                            } else {
+                                include 'modul/pendapatan/data_pendapatan.php';
+                            }
                         } elseif ($page == 'jadwal') {
                             if ($act == '') {
                                 include 'modul/jadwal/data_jadwal.php';
@@ -402,7 +404,7 @@ if (@$_SESSION['Admin']) {
                                 include 'modul/komhar_karyawan /del_komhar.php';
                             }
                         } elseif ($page == 'laporan') {
-                            if ($act == '') {
+                            if ($act == 'pendapatan') {
                                 include 'modul/laporan/laporan_pendapatan.php';
                             } elseif ($act == 'gaji') {
                                 include 'modul/laporan/laporan_penggajian.php';

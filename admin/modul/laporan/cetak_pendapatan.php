@@ -22,7 +22,7 @@ $dt2 = $_POST["tgl_2"];
     $data = mysqli_query($koneksi, "SELECT * FROM tb_aplikasi");
     while ($d = mysqli_fetch_array($data)) {
     ?>
-        <img src="../../../assets/img/app/<?= $d['foto'] ?>" class="img-thumbnail" style="height: 100px;width: 100px;">
+        <img src="../../../assets/img/app/logo.png" class="img-thumbnail" style="height: 100px;width: 100px;">
     <?php } ?>
     <br>
     <h3><b>Laporan Pendapatan</b></h3>
@@ -43,13 +43,13 @@ $dt2 = $_POST["tgl_2"];
             <tr>
                 <th>No</th>
                 <th>Tanggal</th>
-                <th>Kode Karyawan</th>
-                <th>Nama Karyawan</th>
-                <th>Gaji Pokok</th>
-                <th>Tunjangan</th>
-                <th>Bonus</th>
+                <th>Nama Tamu</th>
+                <th>Karyawan</th>
+                <th>Treatment</th>
+                <th>Masalah</th>
+                <th>Harga</th>
                 <th>Potongan</th>
-                <th>Gaji Bersih</th>
+                <th>Total</th>
             </tr>
         </thead>
         <tbody>
